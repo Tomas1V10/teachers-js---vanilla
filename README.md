@@ -1,1 +1,1 @@
-# teachers-js---vanilla
+# teachers-js-vanilla
