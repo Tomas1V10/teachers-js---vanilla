@@ -22,10 +22,47 @@
 
             </article>
             <article class="col-xs-12 col-md-6">
-                Formulario
+                
+                <form novalidate class="form-flooating" id="teacherform">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" id="txtName" Name="txtName" placeholder="Nombre" class="form-control">
+                        <label for="txtName">Nombre</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <textarea name="txtDescription" id="txtDescription" cols="30" rows="10" class="form-control"></textarea>
+                        <label for="txtDescription">Descripción</label>
+                    </div>
+
+                    
+                    <div class="form-floating mb-3">
+                        <input type="email" id="txtEmail" Name="txtEmail" placeholder="Corre Electrónico" class="form-control">
+                        <label for="txtEmail">Correo Electrónico</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="date" id="txtBirDate" Name="txtBirDate" placeholder="dd/mm/aaaa" class="form-control">
+                        <label for="txtBirDate">Fecha de nacimiento</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="d-grid col-md-6">
+                            <button type="reset" id="btnCancel" class="btn btn-secondary">Cancelar</button>
+                        </div>
+
+                        <div class="d-grid col-md-6">
+                            <button type="submit" id="btnsubmit" class="btn btn-success">Enviar</button>
+                        </div>
+                    </div>
+
+
+                </form>
+
             </article>
         </section>
-        <section class="row">
+
+        <section class="row mt-3">
 
             <div class="col-12">
 
@@ -69,16 +106,16 @@
                                     102030
                                 </td>
                                 <td>
-                                    Yhoan Galeano
+                                    Tomas Vargas
                                 </td>
                                 <td>
-                                    Da clases de frontend en la upb
+                                    Estudia programacion en la upb
                                 </td>
                                 <td>
-                                    y@g.com
+                                    vargastomas972@gmail.com
                                 </td>
                                 <td>
-                                    05/07/1993
+                                    04/07/2003
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-primary" title="Editar">
@@ -103,7 +140,7 @@
     </main>
 
     <footer>
-        Derechos reservados por Yhoan <em class="fa-regular fa-copyright"></em>
+        Derechos reservados por Tomas <em class="fa-regular fa-copyright"></em>
     </footer>
 
 </body>
