@@ -1,0 +1,1 @@
+// Se encarga de guardar, actualizar, leer y eliminar los datos en el storage
