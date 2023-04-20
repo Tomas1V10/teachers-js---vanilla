@@ -1,9 +1,13 @@
 // Encargado de acceder al localStorage del navegador
 
-export function getDatabase() {
-    return localStorage.getItem('db_teachers');
+export function getDatabase(dbName) {
+    const databaseString = localStorage.getItem(dbName);
+    const database = JSON.parse(databaseString);
+    return database === null ? [] : database; 
 }
 
-export function setDatabase(teachers) {
-    localStorage.setItem('db_teachers', teachers);
+export function setDatabase(dbName, jsonData) {
+    localStorage.setItem(dbName, JSON.stringify(jsonData));
 }
+
+
