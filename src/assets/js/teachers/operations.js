@@ -1,7 +1,16 @@
 // Se encarga de la interacción de js con html
+
+// Third Libraries
 import alertify from 'alertifyjs';
-import { formElements, getFormData, resetForm } from './form';
+
+// Own Libraries
+import { validateForm } from './../utils/validations';
+
+// Module Libraries
+import { formElements, fieldConfigurations, getFormData, resetForm } from './form';
 import { createTeacher, readTeachers } from './repository';
+
+
 
 export function listeners() {
     window.addEventListener('load', () => {
@@ -13,10 +22,19 @@ export function listeners() {
 function listenFormSubmitEvent() {
     formElements.form.addEventListener('submit', (event) => {
         event.preventDefault();
-        createTeacher(getFormData());
-        resetForm();
-        alertify.success('Profesor guardado correctamente')
-        listTeachers();
+
+        if (validateForm(fieldConfigurations)) {
+
+            createTeacher(getFormData());
+            resetForm();
+            alertify.success('Profesor guardado correctamente');
+            listTeachers();
+
+        } else {
+            alertify.error('Verificar los datos del formulario');
+        }
+
+
     });
 }
 
@@ -58,7 +76,7 @@ export function listTeachers() {
             colButtons.classList.add('text-center');
 
             const editButton = document.createElement('button')
-            editButton.classList.add('btn', 'btn-primary', 'btn-edit');
+            editButton.classList.add('btn', 'btn-primary', 'btn-edit', 'm-1');
             editButton.dataset.id = id;
             editButton.setAttribute('title', 'Editar')
             const editIcon = document.createElement('em');
@@ -67,7 +85,7 @@ export function listTeachers() {
             colButtons.appendChild(editButton);
 
             const deleteButton = document.createElement('button')
-            deleteButton.classList.add('btn', 'btn-danger', 'btn-delete');
+            deleteButton.classList.add('btn', 'btn-danger', 'btn-delete', 'm-1');
             deleteButton.dataset.id = id;
             deleteButton.setAttribute('title', 'Eliminar')
             const deleteIcon = document.createElement('em');

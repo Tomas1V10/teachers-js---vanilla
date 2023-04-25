@@ -13,6 +13,36 @@ export const formElements = {
     }
 };
 
+export const fieldConfigurations = [
+    {
+        input: formElements.fields.name,
+        validations: [
+            {
+                errorId: `${formElements.fields.name.id}Required`,
+                errorMessage: 'El Nombre es obligatorio',
+                validationFunction: (value) => {
+                    return value.trim() !== '';
+                }
+            }
+        ]
+
+    },
+
+    {
+        input: formElements.fields.description,
+        validations: [
+            {
+                errorId: `${formElements.fields.description.id}Required`,
+                errorMessage: 'La descripción es obligatoria',
+                validationFunction: (value) => {
+                    return value.trim() !== '';
+                }
+            }
+        ]
+
+    }
+];
+
 export function getFormData() {
     /**
      * const formData = new FormData(formElements.form);
